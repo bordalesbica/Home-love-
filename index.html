@@ -23,35 +23,19 @@
             --green-d: #17994A;
             --accent: #D4A0B0;
         }
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--ink);
             color: var(--pearl);
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--ink);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--cherry);
-            border-radius: 4px;
-        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--ink); }
+        ::-webkit-scrollbar-thumb { background: var(--cherry); border-radius: 4px; }
 
-        /* ── Promo bar ── */
+        /* Promo bar */
         .promo-bar {
             background: linear-gradient(90deg, var(--cherry), #A0152F, var(--cherry));
             background-size: 200% 100%;
@@ -65,15 +49,10 @@
             color: #fff;
             border-bottom: 1px solid rgba(255, 255, 255, .1);
         }
-        .promo-bar span {
-            color: #FFD6E0;
-        }
-        @keyframes barSlide {
-            0% { background-position: 0 0; }
-            100% { background-position: 200% 0; }
-        }
+        .promo-bar span { color: #FFD6E0; }
+        @keyframes barSlide { 0% { background-position: 0 0; } 100% { background-position: 200% 0; } }
 
-        /* ── Nav ── */
+        /* Nav */
         .nav {
             position: sticky;
             top: 0;
@@ -101,11 +80,7 @@
             -webkit-text-fill-color: transparent;
             text-decoration: none;
         }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
+        .nav-links { display: flex; align-items: center; gap: 28px; }
         .nav-links a {
             font-size: 12px;
             font-weight: 500;
@@ -113,14 +88,8 @@
             text-decoration: none;
             transition: color .2s;
         }
-        .nav-links a:hover {
-            color: #fff;
-        }
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .nav-links a:hover { color: #fff; }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
         .whatsapp-nav {
             display: flex;
             align-items: center;
@@ -135,9 +104,7 @@
             text-decoration: none;
             transition: all .2s;
         }
-        .whatsapp-nav:hover {
-            background: rgba(37, 211, 102, .18);
-        }
+        .whatsapp-nav:hover { background: rgba(37, 211, 102, .18); }
         .cart-btn {
             position: relative;
             padding: 9px 12px;
@@ -148,12 +115,8 @@
             color: #FFAEC4;
             transition: all .2s;
         }
-        .cart-btn:hover {
-            background: rgba(255, 255, 255, .1);
-        }
-        .cart-btn i {
-            font-size: 16px;
-        }
+        .cart-btn:hover { background: rgba(255, 255, 255, .1); }
+        .cart-btn i { font-size: 16px; }
         #cartCount {
             position: absolute;
             top: -5px;
@@ -180,7 +143,7 @@
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-        /* ── Hero ── */
+        /* Hero */
         .hero {
             min-height: calc(100vh - 108px);
             display: flex;
@@ -223,10 +186,7 @@
             color: #fff;
             margin-bottom: 20px;
         }
-        .hero-title em {
-            color: #FFAEC4;
-            font-style: italic;
-        }
+        .hero-title em { color: #FFAEC4; font-style: italic; }
         .hero-sub {
             font-size: 14px;
             color: var(--muted);
@@ -235,7 +195,6 @@
             max-width: 440px;
             margin-bottom: 28px;
         }
-
         .diff-badges {
             display: flex;
             flex-wrap: wrap;
@@ -254,11 +213,7 @@
             font-weight: 500;
             color: rgba(245, 238, 232, .8);
         }
-        .diff-badge i {
-            font-size: 10px;
-            color: var(--cherry-l);
-        }
-
+        .diff-badge i { font-size: 10px; color: var(--cherry-l); }
         .countdown-wrap {
             background: rgba(26, 7, 38, .7);
             border: 1px solid rgba(196, 26, 72, .2);
@@ -355,10 +310,7 @@
             gap: 6px;
         }
         .free-ship i { color: var(--green); }
-
-        .hero-img-wrap {
-            position: relative;
-        }
+        .hero-img-wrap { position: relative; }
         .hero-img-frame {
             border-radius: 22px;
             overflow: hidden;
@@ -429,7 +381,7 @@
             color: var(--cherry-l);
         }
 
-        /* ── Trust strip ── */
+        /* Trust strip */
         .trust-strip {
             padding: 18px 24px;
             background: rgba(26, 7, 38, .45);
@@ -455,7 +407,7 @@
         .ts-item i { color: rgba(245, 238, 232, .5); font-size: 13px; }
         .ts-item i.green { color: var(--green); }
 
-        /* ── Produtos ── */
+        /* Produtos */
         .section {
             padding: 76px 24px;
         }
@@ -499,7 +451,6 @@
             margin-right: auto;
             line-height: 1.7;
         }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
@@ -511,7 +462,7 @@
             overflow: hidden;
             background: var(--ink3);
             border: 1px solid rgba(255, 255, 255, .06);
-            transition: transform .35s cubic-bezier(.22, .68, 0, 1.2), box-shadow .35s, border-color .35s;
+            transition: transform .35s cubic-bezier(.22, .68, 0, 1.2), box-shadow .35s;
             display: flex;
             flex-direction: column;
         }
@@ -566,7 +517,6 @@
         .b-purple { background: linear-gradient(135deg, #4A2888, #6B44B8); color: #fff; }
         .b-amber { background: linear-gradient(135deg, #7A3308, #B05A18); color: #fff; }
         .b-green { background: rgba(29,185,84,.12); color: #5BE59E; border:1px solid rgba(29,185,84,.25); }
-
         .card-body {
             padding: 18px;
             display: flex;
@@ -681,7 +631,7 @@
         }
         .btn-add i { font-size: 10px; }
 
-        /* ── Testimonials ── */
+        /* Testimonials */
         .testi-section {
             padding: 76px 24px;
             background: rgba(26, 7, 38, .3);
@@ -727,7 +677,6 @@
             height: 32px;
             border-radius: 50%;
             object-fit: cover;
-            flex-shrink: 0;
             background: var(--ink3);
         }
         .author-name {
@@ -742,7 +691,7 @@
             letter-spacing: .04em;
         }
 
-        /* ── FAQ ── */
+        /* FAQ */
         .faq-section {
             padding: 76px 24px;
             background: rgba(7, 0, 13, .4);
@@ -774,7 +723,6 @@
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            outline: none;
         }
         .faq-trigger i {
             color: rgba(245, 238, 232, .4);
@@ -794,15 +742,13 @@
             line-height: 1.7;
             font-weight: 300;
         }
-        .faq-item.active {
-            border-color: rgba(196, 26, 72, .2);
-        }
+        .faq-item.active { border-color: rgba(196, 26, 72, .2); }
         .faq-item.active .faq-trigger i {
             transform: rotate(180deg);
             color: var(--cherry-l);
         }
 
-        /* ── Security ── */
+        /* Security */
         .security-section {
             padding: 68px 24px;
             background: rgba(7, 0, 13, .6);
@@ -890,16 +836,13 @@
             line-height: 1.6;
         }
 
-        /* ── Footer ── */
+        /* Footer */
         footer {
             background: #04000A;
             border-top: 1px solid rgba(255, 255, 255, .05);
             padding: 44px 24px;
         }
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
         .footer-top {
             display: flex;
             flex-wrap: wrap;
@@ -950,7 +893,7 @@
             font-weight: 300;
         }
 
-        /* ── Footer modals ── */
+        /* Footer modals */
         .footer-modal {
             position: fixed;
             inset: 0;
@@ -973,7 +916,6 @@
             width: 100%;
             max-width: 500px;
             border-radius: 22px;
-            overflow: hidden;
             background: rgba(7, 0, 13, .98);
             border: 1px solid rgba(196, 26, 72, .18);
             box-shadow: 0 36px 90px rgba(0, 0, 0, .7);
@@ -981,9 +923,7 @@
             transform: translateY(22px);
             transition: transform .33s cubic-bezier(.22, .68, 0, 1.2);
         }
-        .footer-modal.open .footer-modal-content {
-            transform: translateY(0);
-        }
+        .footer-modal.open .footer-modal-content { transform: translateY(0); }
         .footer-modal h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 22px;
@@ -996,10 +936,7 @@
             line-height: 1.7;
             font-weight: 300;
         }
-        .footer-modal ul {
-            padding-left: 18px;
-            margin: 8px 0;
-        }
+        .footer-modal ul { padding-left: 18px; margin: 8px 0; }
         .footer-modal .close-modal {
             margin-top: 20px;
             display: inline-flex;
@@ -1015,7 +952,7 @@
             border: none;
         }
 
-        /* ── Cart sidebar (igual antes) ── */
+        /* Cart sidebar */
         #cartOverlay {
             position: fixed;
             inset: 0;
@@ -1045,9 +982,7 @@
             transform: translateX(100%);
             transition: transform .4s cubic-bezier(.22, .68, 0, 1.1);
         }
-        #cartSidebar.open {
-            transform: translateX(0);
-        }
+        #cartSidebar.open { transform: translateX(0); }
         .cart-header {
             padding: 18px 22px;
             border-bottom: 1px solid rgba(255, 255, 255, .06);
@@ -1078,7 +1013,6 @@
             color: var(--muted);
             cursor: pointer;
             transition: all .2s;
-            outline: none;
         }
         .icon-btn:hover {
             background: rgba(255, 255, 255, .12);
@@ -1162,8 +1096,6 @@
             font-size: 13px;
             cursor: pointer;
             transition: all .2s;
-            outline: none;
-            line-height: 1;
         }
         .qty-btn:hover { background: rgba(255, 255, 255, .14); }
         .qty-num {
@@ -1213,7 +1145,7 @@
             margin: 3px 0;
         }
 
-        /* ── Checkout Modal ── */
+        /* Checkout Modal */
         #checkoutModal {
             position: fixed;
             inset: 0;
@@ -1243,9 +1175,7 @@
             transform: translateY(22px);
             transition: transform .33s cubic-bezier(.22, .68, 0, 1.2);
         }
-        #checkoutModal.open .modal-box {
-            transform: translateY(0);
-        }
+        #checkoutModal.open .modal-box { transform: translateY(0); }
         .modal-header {
             padding: 18px 22px;
             border-bottom: 1px solid rgba(255, 255, 255, .06);
@@ -1308,7 +1238,6 @@
             height: 12px;
             background: rgba(255, 255, 255, .1);
         }
-
         .order-summary-mini {
             background: rgba(0, 0, 0, .35);
             border: 1px solid rgba(255, 255, 255, .07);
@@ -1342,7 +1271,6 @@
             font-size: 17px;
             color: #fff;
         }
-
         .delivery-estimate {
             background: rgba(29, 185, 84, .08);
             border-left: 3px solid var(--green);
@@ -1361,16 +1289,8 @@
             margin-top: 3px;
             display: block;
         }
-        .field-group {
-            display: grid;
-            gap: 12px;
-        }
-        .field-group.two {
-            grid-template-columns: 1fr 1fr;
-        }
-        .field-group.three {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
+        .field-group { display: grid; gap: 12px; }
+        .field-group.two { grid-template-columns: 1fr 1fr; }
         .field-label {
             display: block;
             font-size: 9px;
@@ -1380,9 +1300,7 @@
             text-transform: uppercase;
             margin-bottom: 5px;
         }
-        .field-wrap {
-            position: relative;
-        }
+        .field-wrap { position: relative; }
         .field-icon {
             position: absolute;
             left: 13px;
@@ -1404,12 +1322,8 @@
             transition: border-color .25s;
             font-family: 'Inter', sans-serif;
         }
-        .field-input:focus {
-            border-color: var(--cherry-l);
-        }
-        .field-input::placeholder {
-            color: rgba(144, 136, 160, .55);
-        }
+        .field-input:focus { border-color: var(--cherry-l); }
+        .field-input::placeholder { color: rgba(144, 136, 160, .55); }
         .field-input[type="date"]::-webkit-calendar-picker-indicator {
             filter: invert(0.6);
             cursor: pointer;
@@ -1425,9 +1339,7 @@
             cursor: pointer;
             transition: all .2s;
         }
-        .gift-checkbox-wrap:hover {
-            background: rgba(139, 14, 47, .12);
-        }
+        .gift-checkbox-wrap:hover { background: rgba(139, 14, 47, .12); }
         .gift-checkbox-wrap input {
             cursor: pointer;
             width: 15px;
@@ -1451,13 +1363,8 @@
             max-height: 200px;
             transition: max-height 0.4s cubic-bezier(0.4, 0, 1, 1);
         }
-        .pay-opts {
-            display: grid;
-            gap: 8px;
-        }
-        .pay-radio {
-            display: none;
-        }
+        .pay-opts { display: grid; gap: 8px; }
+        .pay-radio { display: none; }
         .pay-radio:checked+.pay-lbl {
             border-color: var(--cherry-l);
             background: rgba(196, 26, 72, .07);
@@ -1475,9 +1382,7 @@
             font-weight: 500;
             color: var(--pearl);
         }
-        .pay-lbl:hover {
-            border-color: rgba(196, 26, 72, .35);
-        }
+        .pay-lbl:hover { border-color: rgba(196, 26, 72, .35); }
         .pay-lbl.disabled {
             opacity: .38;
             cursor: not-allowed;
@@ -1529,7 +1434,6 @@
             border-color: #E8345A !important;
             box-shadow: 0 0 0 1px #E8345A;
         }
-
         #ambientCanvas {
             position: fixed;
             inset: 0;
@@ -1554,7 +1458,7 @@
             .whatsapp-nav span { display: none; }
         }
         @media(max-width:640px) {
-            .field-group.two, .field-group.three { grid-template-columns: 1fr; }
+            .field-group.two { grid-template-columns: 1fr; }
             .hero { padding: 36px 16px 52px; }
             .section, .testi-section, .security-section { padding: 52px 16px; }
         }
@@ -1854,11 +1758,11 @@
             list.appendChild(frag); count.textContent = totalItems; sub.textContent = `R$ ${totalPrice.toFixed(2).replace('.',',')}`; tot.textContent = `R$ ${totalPrice.toFixed(2).replace('.',',')}`;
         }
 
-        /* DELIVERY ESTIMATE BASED ON CURRENT TIME */
+        /* DELIVERY ESTIMATE */
         function updateDeliveryEstimate() {
             const now = new Date();
             const hour = now.getHours();
-            const isBusinessDay = now.getDay() >= 1 && now.getDay() <= 5; // segunda a sexta
+            const isBusinessDay = now.getDay() >= 1 && now.getDay() <= 5;
             let text = "", detail = "";
             if (hour < 14 && isBusinessDay) {
                 text = "🚀 Se comprar até 14h, chega AMANHÃ!";
@@ -1874,7 +1778,7 @@
             document.getElementById('deliveryDetail').innerHTML = detail;
         }
 
-        /* CEP AUTO-FILL (ViaCEP) */
+        /* CEP AUTO-FILL */
         function setupCepAutoFill() {
             const cepInput = document.getElementById('cepInput');
             cepInput.addEventListener('blur', async () => {
@@ -1900,6 +1804,15 @@
             else { container.classList.remove('open'); recipientInput.value = ''; recipientInput.classList.remove('error'); }
         }
 
+        /* VALIDAÇÕES FORTES */
+        function validateEmail(email) {
+            return /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email);
+        }
+        function validatePhone(phone) {
+            const digits = phone.replace(/\D/g, '');
+            return digits.length >= 10 && digits.length <= 11;
+        }
+
         /* CHECKOUT MODAL */
         function openCheckoutModal() {
             if (!Object.keys(cart).length) { const finalizarBtn = document.querySelector('.cart-footer .btn-green'); if(finalizarBtn){ finalizarBtn.style.transform='scale(0.95)'; setTimeout(()=>{ finalizarBtn.style.transform=''; },150); } return; }
@@ -1909,12 +1822,11 @@
             closeCart(); document.getElementById('checkoutModal').classList.add('open'); document.body.style.overflow='hidden'; document.getElementById('payPix').checked=true;
             document.getElementById('isGift').checked=false; document.getElementById('giftFields').classList.remove('open'); document.getElementById('recipientName').value=''; document.getElementById('recipientName').classList.remove('error');
             document.querySelectorAll('.field-input.error').forEach(el=>el.classList.remove('error'));
-            updateDeliveryEstimate(); // atualiza o prazo ao abrir o modal
+            updateDeliveryEstimate();
         }
         function closeCheckoutModal() { document.getElementById('checkoutModal').classList.remove('open'); document.body.style.overflow=''; }
         function handleModalBgClick(e) { if(e.target===document.getElementById('checkoutModal')) closeCheckoutModal(); }
 
-        /* VALIDAÇÃO */
         function validateCheckoutFields() {
             const name = document.getElementById('custName').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
@@ -1929,18 +1841,22 @@
             document.querySelectorAll('.field-input.error').forEach(el=>el.classList.remove('error'));
             let valid=true;
             if(name.length<4){ document.getElementById('custName').classList.add('error'); valid=false; }
-            if(phone.length<10){ document.getElementById('custPhone').classList.add('error'); valid=false; }
-            if(email.length<5 || !email.includes('@')){ document.getElementById('custEmail').classList.add('error'); valid=false; }
+            if(!validatePhone(phone)){ document.getElementById('custPhone').classList.add('error'); valid=false; }
+            if(!validateEmail(email)){ document.getElementById('custEmail').classList.add('error'); valid=false; }
             if(!deliveryDate){ document.getElementById('deliveryDate').classList.add('error'); valid=false; }
             if(isGift && recipientName.length<3){ document.getElementById('recipientName').classList.add('error'); valid=false; }
-            if(cep.length<8){ document.getElementById('cepInput').classList.add('error'); valid=false; }
+            if(cep.replace(/\D/g,'').length!==8){ document.getElementById('cepInput').classList.add('error'); valid=false; }
             if(street.length<3){ document.getElementById('addressStreet').classList.add('error'); valid=false; }
             if(number.length===0){ document.getElementById('addressNumber').classList.add('error'); valid=false; }
             return valid;
         }
 
         function handleCheckoutSubmit() {
-            if(!validateCheckoutFields()){ setTimeout(()=>{ document.querySelectorAll('.field-input.error').forEach(el=>el.classList.remove('error')); },2000); return; }
+            if(!validateCheckoutFields()){ 
+                setTimeout(()=>{ document.querySelectorAll('.field-input.error').forEach(el=>el.classList.remove('error')); },3000); 
+                return; 
+            }
+            
             const name = document.getElementById('custName').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
             const email = document.getElementById('custEmail').value.trim();
@@ -1956,13 +1872,27 @@
             const msg = document.getElementById('custMsg').value.trim();
 
             const addressFull = `${street}, ${number}${complement ? `, ${complement}` : ''} - ${neighborhood} - ${cityUf} - CEP ${cep}`;
-            let total=0, items='';
-            Object.keys(cart).forEach(id=>{ const item=cart[id]; total+=item.price*item.qty; items+=`• ${item.qty}× ${item.name} — R$ ${(item.price*item.qty).toFixed(2).replace('.',',')}\n`; });
+            let total=0, itemsList = [];
+            Object.keys(cart).forEach(id=>{ const item=cart[id]; total+=item.price*item.qty; itemsList.push(`${item.qty}× ${item.name}`); });
+            const itemsText = itemsList.join(', ');
             const pixTotal = (total*0.95).toFixed(2).replace('.',',');
             const dataFormatada = deliveryDate.split('-').reverse().join('/');
 
-            const text = `🎁 *NOVO PEDIDO — HOME LOVE* 🎁\n\n👤 *Comprador:* ${name}\n📱 *WhatsApp:* ${phone}\n📧 *E-mail:* ${email}\n\n📅 *Data de Entrega:* ${dataFormatada}\n${isGift?`💝 *Tipo:* PRESENTE (Ocultar Preço na Caixa)\n🎯 *Destinatário:* ${recipientName}\n`:`💝 *Tipo:* Entrega Pessoal\n`}📍 *Endereço:* ${addressFull}\n\n📦 *Itens:*\n${items}\n${msg?`💌 *Mensagem do Cartão:* "${msg}"\n\n`:''}🚚 Frete Sedex: *GRÁTIS*\n💳 Pagamento: *PIX*\n💰 *Total com desconto (5%): R$ ${pixTotal}*\n\nOlá, acabei de gerar meu pedido! Aguardo a chave PIX para pagamento. 😊`;
-            const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(text)}`;
+            // Mensagem personalizada conforme solicitado: "João, compra produto tal, aguardo meu código Pix para pagamento."
+            const text = `*${name}*, comprei ${itemsText}. Aguardo meu código PIX para pagamento. %0A%0A` +
+                         `📦 *Detalhes do pedido:*%0A` +
+                         `👤 Comprador: ${name}%0A` +
+                         `📱 WhatsApp: ${phone}%0A` +
+                         `📧 E-mail: ${email}%0A` +
+                         `📅 Entrega desejada: ${dataFormatada}%0A` +
+                         `${isGift ? `🎁 Presente para: ${recipientName}%0A` : ''}` +
+                         `📍 Endereço: ${addressFull}%0A` +
+                         `${msg ? `💌 Mensagem: "${msg}"%0A` : ''}` +
+                         `🚚 Frete Grátis Sedex%0A` +
+                         `💰 Total com desconto PIX: R$ ${pixTotal}%0A%0A` +
+                         `🔐 *Aguardando a chave PIX para pagamento.*`;
+
+            const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`;
             window.open(url, '_blank');
         }
 
