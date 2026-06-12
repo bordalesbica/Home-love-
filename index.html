@@ -1,0 +1,2690 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Love | Presentes Premium — Dia dos Namorados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --cherry: #8B0E2F;
+            --cherry-l: #C41A48;
+            --rose: #E8345A;
+            --ink: #07000D;
+            --ink2: #110319;
+            --ink3: #1A0726;
+            --pearl: #F5EEE8;
+            --muted: #9088A0;
+            --soft: #B8AABA;
+            --green: #1DB954;
+            --green-d: #17994A;
+            --accent: #D4A0B0;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--ink);
+            color: var(--pearl);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--ink);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--cherry);
+            border-radius: 4px;
+        }
+
+        /* ── Promo bar ── */
+        .promo-bar {
+            background: linear-gradient(90deg, var(--cherry), #A0152F, var(--cherry));
+            background-size: 200% 100%;
+            animation: barSlide 6s linear infinite;
+            padding: 10px 16px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+        .promo-bar span {
+            color: #FFD6E0;
+        }
+        @keyframes barSlide {
+            0% {
+                background-position: 0 0
+            }
+            100% {
+                background-position: 200% 0
+            }
+        }
+
+        /* ── Nav ── */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(7, 0, 13, .94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: .1em;
+            background: linear-gradient(135deg, #fff 30%, #FFAEC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(245, 238, 232, .55);
+            text-decoration: none;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .whatsapp-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 10px;
+            background: rgba(37, 211, 102, .1);
+            border: 1px solid rgba(37, 211, 102, .25);
+            color: #25D366;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all .2s;
+        }
+        .whatsapp-nav:hover {
+            background: rgba(37, 211, 102, .18);
+        }
+        .cart-btn {
+            position: relative;
+            padding: 9px 12px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 12px;
+            cursor: pointer;
+            color: #FFAEC4;
+            transition: all .2s;
+        }
+        .cart-btn:hover {
+            background: rgba(255, 255, 255, .1);
+        }
+        .cart-btn i {
+            font-size: 16px;
+        }
+        #cartCount {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 17px;
+            height: 17px;
+            background: var(--cherry-l);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--ink);
+        }
+        .dot-live {
+            width: 6px;
+            height: 6px;
+            background: var(--cherry-l);
+            border-radius: 50%;
+            display: inline-block;
+            animation: blink 1.8s ease infinite;
+        }
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: .3
+            }
+        }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: calc(100vh - 108px);
+            display: flex;
+            align-items: center;
+            padding: 60px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+        }
+        .hero-eyebrow {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--cherry-l);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(38px, 4.5vw, 62px);
+            font-weight: 400;
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .hero-title em {
+            color: #FFAEC4;
+            font-style: italic;
+        }
+        .hero-sub {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.78;
+            font-weight: 300;
+            max-width: 440px;
+            margin-bottom: 28px;
+        }
+
+        .diff-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .diff-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(245, 238, 232, .8);
+        }
+        .diff-badge i {
+            font-size: 10px;
+            color: var(--cherry-l);
+        }
+
+        .countdown-wrap {
+            background: rgba(26, 7, 38, .7);
+            border: 1px solid rgba(196, 26, 72, .2);
+            border-radius: 16px;
+            padding: 18px 22px;
+            max-width: 380px;
+            margin-bottom: 28px;
+        }
+        .countdown-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--cherry-l);
+            margin-bottom: 14px;
+        }
+        .countdown-cells {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .cc {
+            background: rgba(0, 0, 0, .55);
+            border: 1px solid rgba(255, 255, 255, .07);
+            border-radius: 10px;
+            padding: 10px 8px;
+            text-align: center;
+            min-width: 62px;
+        }
+        .cc-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+            display: block;
+            line-height: 1;
+        }
+        .cc-num.red {
+            color: var(--cherry-l);
+        }
+        .cc-lbl {
+            font-size: 9px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 3px;
+            display: block;
+        }
+        .sep {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: rgba(255, 255, 255, .22);
+            padding-bottom: 8px;
+        }
+        .hero-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 28px;
+            background: linear-gradient(135deg, var(--cherry), var(--cherry-l));
+            color: #fff;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            border-radius: 13px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all .3s;
+            box-shadow: 0 6px 28px rgba(139, 14, 47, .4);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 8px 36px rgba(196, 26, 72, .6);
+            transform: translateY(-2px);
+        }
+        .btn-green {
+            background: linear-gradient(135deg, var(--green-d), var(--green));
+            box-shadow: 0 6px 24px rgba(29, 185, 84, .3);
+        }
+        .btn-green:hover {
+            box-shadow: 0 8px 32px rgba(29, 185, 84, .5);
+        }
+        .free-ship {
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .free-ship i {
+            color: var(--green);
+        }
+
+        .hero-img-wrap {
+            position: relative;
+        }
+        .hero-img-frame {
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .08);
+            box-shadow: 0 28px 72px rgba(0, 0, 0, .65);
+            position: relative;
+        }
+        .hero-img-frame img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(.82) saturate(1.1);
+        }
+        .hero-img-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(7, 0, 13, .88) 0%, rgba(7, 0, 13, .1) 50%, transparent 100%);
+        }
+        .quote-card {
+            position: absolute;
+            bottom: 18px;
+            left: 14px;
+            right: 14px;
+            padding: 15px 18px;
+            background: rgba(7, 0, 13, .92);
+            backdrop-filter: blur(12px);
+            border-radius: 13px;
+            border: 1px solid rgba(196, 26, 72, .2);
+            z-index: 2;
+        }
+        .quote-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-style: italic;
+            color: rgba(245, 238, 232, .85);
+            line-height: 1.65;
+        }
+        .float-pill {
+            position: absolute;
+            top: 18px;
+            left: -14px;
+            background: rgba(7, 0, 13, .93);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 12px;
+            padding: 10px 15px;
+            backdrop-filter: blur(12px);
+            z-index: 2;
+        }
+        .float-pill .num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1;
+        }
+        .float-pill .lbl {
+            font-size: 10px;
+            letter-spacing: .06em;
+            color: var(--muted);
+        }
+        .float-pill .sup {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--cherry-l);
+        }
+
+        /* ── Trust strip ── */
+        .trust-strip {
+            padding: 18px 24px;
+            background: rgba(26, 7, 38, .45);
+            border-top: 1px solid rgba(255, 255, 255, .04);
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+        }
+        .trust-strip-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 36px;
+        }
+        .ts-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(245, 238, 232, .6);
+        }
+        .ts-item i {
+            color: rgba(245, 238, 232, .5);
+            font-size: 13px;
+        }
+        .ts-item i.green {
+            color: var(--green);
+        }
+
+        /* ── Produtos ── */
+        .section {
+            padding: 76px 24px;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-head {
+            text-align: center;
+            margin-bottom: 52px;
+        }
+        .sec-eyebrow {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--cherry-l);
+        }
+        .sec-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(30px, 4vw, 48px);
+            font-weight: 400;
+            color: #fff;
+            margin: 10px 0 14px;
+            line-height: 1.2;
+        }
+        .sec-title em {
+            color: #FFAEC4;
+            font-style: italic;
+        }
+        .gold-rule {
+            width: 44px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(196, 26, 72, .6), transparent);
+            margin: 0 auto;
+        }
+        .sec-sub {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 300;
+            margin-top: 14px;
+            max-width: 460px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+            gap: 22px;
+        }
+        .product-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--ink3);
+            border: 1px solid rgba(255, 255, 255, .06);
+            transition: transform .35s cubic-bezier(.22, .68, 0, 1.2), box-shadow .35s, border-color .35s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 22px 56px rgba(139, 14, 47, .32);
+            border-color: rgba(196, 26, 72, .2);
+        }
+        .product-card:hover .card-img {
+            transform: scale(1.06);
+        }
+        .card-img-wrap {
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .card-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(.9) saturate(1.05);
+            transition: transform .6s cubic-bezier(.22, .68, 0, 1.2);
+        }
+        .card-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--ink3) 0%, transparent 60%);
+        }
+        .card-badges {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 9px;
+            border-radius: 999px;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .b-cherry {
+            background: linear-gradient(135deg, var(--cherry), var(--cherry-l));
+            color: #fff;
+        }
+        .b-soft {
+            background: rgba(255, 255, 255, .12);
+            color: rgba(245, 238, 232, .9);
+            border: 1px solid rgba(255, 255, 255, .15);
+        }
+        .b-purple {
+            background: linear-gradient(135deg, #4A2888, #6B44B8);
+            color: #fff;
+        }
+        .b-amber {
+            background: linear-gradient(135deg, #7A3308, #B05A18);
+            color: #fff;
+        }
+        .b-green {
+            background: rgba(29, 185, 84, .12);
+            color: #5BE59E;
+            border: 1px solid rgba(29, 185, 84, .25);
+        }
+
+        .card-body {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+        .card-category {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            color: var(--soft);
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .card-category i {
+            font-size: 10px;
+        }
+        .card-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.3;
+        }
+        .card-desc {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.65;
+        }
+        .card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .card-feat {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .07);
+            color: rgba(245, 238, 232, .58);
+        }
+        .price-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .price-old {
+            font-size: 12px;
+            color: var(--muted);
+            text-decoration: line-through;
+        }
+        .price-now {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1;
+        }
+        .price-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 2px;
+        }
+        .price-pix {
+            font-size: 11px;
+            color: #32BCAD;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .price-parcela {
+            font-size: 11px;
+            color: var(--muted);
+        }
+        .save-tag {
+            font-size: 10px;
+            color: #FF8FA8;
+            font-weight: 600;
+            background: rgba(196, 26, 72, .1);
+            border-radius: 5px;
+            padding: 2px 7px;
+            display: inline-block;
+        }
+        .btn-add {
+            width: 100%;
+            padding: 11px;
+            background: rgba(255, 255, 255, .04);
+            color: var(--pearl);
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            border-radius: 11px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            cursor: pointer;
+            transition: all .3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+        .btn-add:hover {
+            background: linear-gradient(135deg, var(--cherry), var(--cherry-l));
+            border-color: transparent;
+            box-shadow: 0 4px 20px rgba(139, 14, 47, .48);
+        }
+        .btn-add i {
+            font-size: 10px;
+        }
+
+        /* ── Testimonials ── */
+        .testi-section {
+            padding: 76px 24px;
+            background: rgba(26, 7, 38, .3);
+            border-top: 1px solid rgba(255, 255, 255, .04);
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+        }
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 18px;
+        }
+        .testi-card {
+            background: rgba(7, 0, 13, .75);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 18px;
+            padding: 26px;
+            transition: border-color .3s;
+        }
+        .testi-card:hover {
+            border-color: rgba(196, 26, 72, .18);
+        }
+        .stars {
+            color: #FF8FA8;
+            font-size: 11px;
+            display: flex;
+            gap: 2px;
+            margin-bottom: 14px;
+        }
+        .testi-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            font-style: italic;
+            color: rgba(245, 238, 232, .85);
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-weight: 300;
+        }
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: var(--ink3);
+        }
+        .author-name {
+            font-size: 12px;
+            font-weight: 500;
+            color: #fff;
+        }
+        .author-badge {
+            font-size: 10px;
+            color: var(--green);
+            font-weight: 600;
+            letter-spacing: .04em;
+        }
+
+        /* ── FAQ ── */
+        .faq-section {
+            padding: 76px 24px;
+            background: rgba(7, 0, 13, .4);
+        }
+        .faq-grid {
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: var(--ink3);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all .3s;
+        }
+        .faq-trigger {
+            width: 100%;
+            padding: 18px 22px;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+        }
+        .faq-trigger i {
+            color: rgba(245, 238, 232, .4);
+            font-size: 12px;
+            transition: transform .3s;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s ease-out;
+            background: rgba(0, 0, 0, .2);
+        }
+        .faq-content p {
+            padding: 0 22px 18px 22px;
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .faq-item.active {
+            border-color: rgba(196, 26, 72, .2);
+        }
+        .faq-item.active .faq-trigger i {
+            transform: rotate(180deg);
+            color: var(--cherry-l);
+        }
+
+        /* ── Security ── */
+        .security-section {
+            padding: 68px 24px;
+            background: rgba(7, 0, 13, .6);
+        }
+        .security-seals-1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .seal {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(26, 7, 38, .8);
+            border: 1px solid rgba(255, 255, 255, .1);
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(245, 238, 232, .82);
+        }
+        .seal i {
+            color: rgba(245, 238, 232, .5);
+            font-size: 13px;
+        }
+        .seal-green i {
+            color: var(--green);
+        }
+        .seal-blue i {
+            color: #60A8F0;
+        }
+        .payments-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .pay-chip {
+            padding: 7px 14px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(245, 238, 232, .8);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pay-chip i {
+            font-size: 14px;
+        }
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 12px;
+            margin-top: 36px;
+        }
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            background: rgba(26, 7, 38, .5);
+            border: 1px solid rgba(255, 255, 255, .05);
+        }
+        .trust-icon {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+            background: rgba(196, 26, 72, .1);
+            color: #FFAEC4;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+        .trust-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+        .trust-desc {
+            font-size: 11px;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: #04000A;
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            padding: 44px 24px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            margin-bottom: 20px;
+        }
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: .1em;
+            color: rgba(245, 238, 232, .7);
+            margin-bottom: 8px;
+        }
+        .footer-brand-desc {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 300;
+            max-width: 340px;
+            line-height: 1.65;
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .footer-links a {
+            font-size: 11px;
+            color: rgba(144, 136, 160, .6);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color .2s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .footer-copy {
+            font-size: 11px;
+            color: rgba(144, 136, 160, .4);
+            font-weight: 300;
+        }
+
+        /* ── Footer modals ── */
+        .footer-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 80;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(0, 0, 0, .88);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s;
+        }
+        .footer-modal.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .footer-modal-content {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: rgba(7, 0, 13, .98);
+            border: 1px solid rgba(196, 26, 72, .18);
+            box-shadow: 0 36px 90px rgba(0, 0, 0, .7);
+            padding: 32px;
+            transform: translateY(22px);
+            transition: transform .33s cubic-bezier(.22, .68, 0, 1.2);
+        }
+        .footer-modal.open .footer-modal-content {
+            transform: translateY(0);
+        }
+        .footer-modal h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .footer-modal p,
+        .footer-modal li {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .footer-modal ul {
+            padding-left: 18px;
+            margin: 8px 0;
+        }
+        .footer-modal .close-modal {
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 18px;
+            background: var(--cherry-l);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* ── Cart sidebar ── */
+        #cartOverlay {
+            position: fixed;
+            inset: 0;
+            z-index: 55;
+            background: rgba(0, 0, 0, .55);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s;
+        }
+        #cartOverlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        #cartSidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(100%, 400px);
+            z-index: 60;
+            display: flex;
+            flex-direction: column;
+            background: rgba(7, 0, 13, .97);
+            backdrop-filter: blur(28px);
+            border-left: 1px solid rgba(255, 255, 255, .08);
+            transform: translateX(100%);
+            transition: transform .4s cubic-bezier(.22, .68, 0, 1.1);
+        }
+        #cartSidebar.open {
+            transform: translateX(0);
+        }
+        .cart-header {
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, .2);
+        }
+        .cart-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+        .cart-title i {
+            color: #FFAEC4;
+            font-size: 15px;
+        }
+        .icon-btn {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            color: var(--muted);
+            cursor: pointer;
+            transition: all .2s;
+            outline: none;
+        }
+        .icon-btn:hover {
+            background: rgba(255, 255, 255, .12);
+            color: #fff;
+        }
+        #cartItemsList {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 44px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+        }
+        .cart-empty i {
+            font-size: 28px;
+            color: rgba(139, 14, 47, .35);
+        }
+        .cart-empty a {
+            font-size: 12px;
+            color: #FFAEC4;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .cart-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: rgba(0, 0, 0, .38);
+            border: 1px solid rgba(255, 255, 255, .05);
+            border-radius: 12px;
+            padding: 10px;
+        }
+        .cart-item-img {
+            width: 54px;
+            height: 54px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .07);
+            flex-shrink: 0;
+        }
+        .cart-item-name {
+            font-size: 11px;
+            font-weight: 500;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .cart-item-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1;
+        }
+        .qty-row {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 5px;
+        }
+        .qty-btn {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            color: var(--pearl);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all .2s;
+            outline: none;
+            line-height: 1;
+        }
+        .qty-btn:hover {
+            background: rgba(255, 255, 255, .14);
+        }
+        .qty-num {
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            min-width: 14px;
+            text-align: center;
+        }
+        .cart-footer {
+            padding: 18px 22px;
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            background: rgba(0, 0, 0, .2);
+        }
+        .cart-totals {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        .ct-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 300;
+        }
+        .ct-row.big {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .ct-row.big span.amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .ct-row.free {
+            color: var(--green);
+            font-weight: 600;
+            font-size: 11px;
+        }
+        .ct-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, .05);
+            margin: 3px 0;
+        }
+
+        /* ── Checkout Modal ── */
+        #checkoutModal {
+            position: fixed;
+            inset: 0;
+            z-index: 70;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(0, 0, 0, .88);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s;
+        }
+        #checkoutModal.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .modal-box {
+            width: 100%;
+            max-width: 540px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: rgba(7, 0, 13, .98);
+            border: 1px solid rgba(196, 26, 72, .18);
+            box-shadow: 0 36px 90px rgba(0, 0, 0, .7);
+            transform: translateY(22px);
+            transition: transform .33s cubic-bezier(.22, .68, 0, 1.2);
+        }
+        #checkoutModal.open .modal-box {
+            transform: translateY(0);
+        }
+        .modal-header {
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, .2);
+        }
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+        .modal-title i {
+            color: var(--cherry-l);
+        }
+        .modal-subtitle {
+            font-size: 9px;
+            color: var(--muted);
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-top: 3px;
+            font-weight: 300;
+        }
+        .modal-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-height: 82vh;
+            overflow-y: auto;
+        }
+        .checkout-seals {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, .3);
+            border-radius: 11px;
+            border: 1px solid rgba(255, 255, 255, .05);
+        }
+        .cs {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 9px;
+            font-weight: 600;
+            color: rgba(245, 238, 232, .55);
+            letter-spacing: .04em;
+        }
+        .cs i {
+            font-size: 10px;
+        }
+        .cs.g {
+            color: #5BE59E;
+        }
+        .cs.b {
+            color: #60A8F0;
+        }
+        .cs.y {
+            color: rgba(245, 238, 232, .8);
+        }
+        .cs-divider {
+            width: 1px;
+            height: 12px;
+            background: rgba(255, 255, 255, .1);
+        }
+        .order-summary-mini {
+            background: rgba(0, 0, 0, .35);
+            border: 1px solid rgba(255, 255, 255, .07);
+            border-radius: 11px;
+            padding: 13px 15px;
+        }
+        .osm-title {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 9px;
+        }
+        .osm-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: rgba(245, 238, 232, .72);
+            padding: 2px 0;
+        }
+        .osm-item.total {
+            font-weight: 600;
+            color: #fff;
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            margin-top: 6px;
+            padding-top: 7px;
+        }
+        .osm-item.total span:last-child {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            color: #fff;
+        }
+        .field-group {
+            display: grid;
+            gap: 12px;
+        }
+        .field-group.two {
+            grid-template-columns: 1fr 1fr;
+        }
+        .field-label {
+            display: block;
+            font-size: 9px;
+            font-weight: 600;
+            color: rgba(245, 238, 232, .6);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .field-wrap {
+            position: relative;
+        }
+        .field-icon {
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 10px;
+            pointer-events: none;
+        }
+        .field-input {
+            width: 100%;
+            background: rgba(0, 0, 0, .55);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 11px;
+            padding: 10px 13px 10px 38px;
+            font-size: 12px;
+            color: var(--pearl);
+            outline: none;
+            transition: border-color .25s;
+            font-family: 'Inter', sans-serif;
+        }
+        .field-input:focus {
+            border-color: var(--cherry-l);
+        }
+        .field-input::placeholder {
+            color: rgba(144, 136, 160, .55);
+        }
+        .field-input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.6);
+            cursor: pointer;
+        }
+        .gift-checkbox-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(139, 14, 47, .06);
+            border: 1px solid rgba(139, 14, 47, .2);
+            border-radius: 11px;
+            cursor: pointer;
+            transition: all .2s;
+        }
+        .gift-checkbox-wrap:hover {
+            background: rgba(139, 14, 47, .12);
+        }
+        .gift-checkbox-wrap input {
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            accent-color: var(--cherry-l);
+        }
+        .gift-checkbox-wrap label {
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .collapsible-field {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            display: grid;
+            gap: 12px;
+        }
+        .collapsible-field.open {
+            max-height: 200px;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 1, 1);
+        }
+        .pay-opts {
+            display: grid;
+            gap: 8px;
+        }
+        .pay-radio {
+            display: none;
+        }
+        .pay-radio:checked+.pay-lbl {
+            border-color: var(--cherry-l);
+            background: rgba(196, 26, 72, .07);
+        }
+        .pay-lbl {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 14px;
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 11px;
+            cursor: pointer;
+            transition: all .25s;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--pearl);
+        }
+        .pay-lbl:hover {
+            border-color: rgba(196, 26, 72, .35);
+        }
+        .pay-lbl.disabled {
+            opacity: .38;
+            cursor: not-allowed;
+            pointer-events: none;
+            text-decoration: line-through;
+            text-decoration-color: rgba(255, 255, 255, .25);
+        }
+        .pay-lbl i {
+            font-size: 14px;
+        }
+        .co-pay-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+        .co-pay-logo {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .09);
+            border-radius: 7px;
+            font-size: 9px;
+            font-weight: 700;
+            color: rgba(245, 238, 232, .65);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .co-pay-logo i {
+            font-size: 11px;
+        }
+        .info-note {
+            padding: 11px 14px;
+            background: rgba(196, 26, 72, .05);
+            border: 1px solid rgba(196, 26, 72, .14);
+            border-radius: 11px;
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+        }
+        .info-note i {
+            color: #FF8FA8;
+            font-size: 13px;
+            margin-top: 1px;
+            flex-shrink: 0;
+        }
+        .info-note p {
+            font-size: 10px;
+            color: rgba(245, 238, 232, .65);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* ── Validação silenciosa ── */
+        .field-input.error {
+            border-color: #E8345A !important;
+            box-shadow: 0 0 0 1px #E8345A;
+            transition: border-color .25s, box-shadow .25s;
+        }
+
+        #ambientCanvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fu {
+            animation: fadeUp .7s ease both;
+        }
+        .d1 {
+            animation-delay: .1s
+        }
+        .d2 {
+            animation-delay: .22s
+        }
+        .d3 {
+            animation-delay: .36s
+        }
+        .d4 {
+            animation-delay: .5s
+        }
+        .d5 {
+            animation-delay: .64s
+        }
+
+        @media(max-width:900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+            .hero-img-wrap {
+                display: none;
+            }
+            .nav-links {
+                display: none;
+            }
+            .whatsapp-nav span {
+                display: none;
+            }
+        }
+        @media(max-width:640px) {
+            .field-group.two {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 36px 16px 52px;
+            }
+            .section {
+                padding: 52px 16px;
+            }
+            .testi-section {
+                padding: 52px 16px;
+            }
+            .security-section {
+                padding: 52px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="ambientCanvas"></canvas>
+
+    <div class="promo-bar">
+        <i class="fa-solid fa-truck-fast" style="margin-right:6px;"></i>
+        Frete Sedex <span>GRÁTIS</span> para todo o Brasil · Até 40% OFF — Oferta encerra <span>12/06 às 12h</span>
+    </div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="logo">HOME LOVE</a>
+            <div class="nav-links">
+                <a href="#">Início</a>
+                <a href="#colecao">Presentes</a>
+                <a href="#depoimentos">Avaliações</a>
+                <a href="#faq">Dúvidas</a>
+                <a href="#seguranca">Segurança</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://wa.me/5518981889090" target="_blank" class="whatsapp-nav">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Atendimento</span>
+                </a>
+                <button class="cart-btn" onclick="openCart()" aria-label="Carrinho">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="blob" style="width:480px;height:480px;background:rgba(139,14,47,.11);top:-90px;left:-130px;"></div>
+        <div class="blob" style="width:360px;height:360px;background:rgba(196,26,72,.06);bottom:-60px;right:-80px;"></div>
+
+        <div class="hero-inner">
+            <div class="fu d1">
+                <p class="hero-eyebrow">
+                    <span class="dot-live"></span>
+                    Edição Dia dos Namorados · Sedex para todo o Brasil
+                </p>
+                <h1 class="hero-title">
+                    O presente <em>certo</em><br>transforma um dia<br>em memória eterna.
+                </h1>
+                <p class="hero-sub">
+                    Floricultura fresca, joias com acabamento premium, cestas gourmet e kits de jantar — cada detalhe selecionado, embalado à mão e entregue com rastreamento em todo o Brasil.
+                </p>
+
+                <div class="diff-badges">
+                    <span class="diff-badge"><i class="fa-solid fa-award"></i> Embalagem premium incluída</span>
+                    <span class="diff-badge"><i class="fa-solid fa-truck-fast"></i> Sedex grátis</span>
+                    <span class="diff-badge"><i class="fa-solid fa-star"></i> 4.9 — +4.200 pedidos</span>
+                    <span class="diff-badge"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> Suporte 24h</span>
+                </div>
+
+                <div class="countdown-wrap">
+                    <p class="countdown-label"><i class="fa-regular fa-clock"></i> Promoção encerra em</p>
+                    <div class="countdown-cells">
+                        <div class="cc"><span class="cc-num red" id="cd-d">00</span><span class="cc-lbl">dias</span></div>
+                        <span class="sep">:</span>
+                        <div class="cc"><span class="cc-num" id="cd-h">00</span><span class="cc-lbl">horas</span></div>
+                        <span class="sep">:</span>
+                        <div class="cc"><span class="cc-num" id="cd-m">00</span><span class="cc-lbl">min</span></div>
+                        <span class="sep">:</span>
+                        <div class="cc"><span class="cc-num" id="cd-s">00</span><span class="cc-lbl">seg</span></div>
+                    </div>
+                </div>
+
+                <div class="hero-cta-row">
+                    <a href="#colecao" class="btn-primary">
+                        <i class="fa-solid fa-gift"></i> Ver Presentes
+                    </a>
+                    <span class="free-ship">
+                        <i class="fa-solid fa-shield-halved"></i> Compra 100% segura
+                    </span>
+                </div>
+            </div>
+
+            <div class="hero-img-wrap fu d2">
+                <div style="position:absolute;top:-16px;right:-16px;width:260px;height:260px;background:rgba(139,14,47,.12);border-radius:50%;filter:blur(56px);pointer-events:none;"></div>
+                <div class="hero-img-frame">
+                    <img src="https://i.postimg.cc/MGKFq3fv/file-00000000df9471f8a0e32a50a0a508ec.png" alt="Presentes Home Love" style="width:100%;height:500px;object-fit:cover;display:block;filter:brightness(.88) saturate(1.1);">
+                    <div class="quote-card">
+                        <p>"Um gesto pensado vale mais do que qualquer preço — e ela vai sentir isso."</p>
+                    </div>
+                </div>
+                <div class="float-pill">
+                    <p class="sup">Mais de</p>
+                    <p class="num">4.200+</p>
+                    <p class="lbl">presentes entregues</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-strip">
+        <div class="trust-strip-inner">
+            <div class="ts-item"><i class="fa-solid fa-lock"></i> SSL 256-bit</div>
+            <div class="ts-item"><i class="fa-solid fa-shield-halved"></i> PCI DSS Certificado</div>
+            <div class="ts-item"><i class="fa-solid fa-truck-ramp-box"></i> Sedex Rastreado</div>
+            <div class="ts-item"><i class="fa-solid fa-rotate-left"></i> Garantia 7 dias</div>
+            <div class="ts-item"><i class="fa-solid fa-star"></i> 4.9 · +4.200 avaliações</div>
+            <div class="ts-item"><i class="fa-brands fa-whatsapp green"></i> Suporte 24h</div>
+        </div>
+    </div>
+
+    <section class="section" id="colecao">
+        <div class="section-inner">
+            <div class="section-head fu">
+                <span class="sec-eyebrow">Seleção Exclusiva · Embalagem Premium</span>
+                <h2 class="sec-title">Presentes que <em>impressionam</em></h2>
+                <div class="gold-rule"></div>
+                <p class="sec-sub">Cada item é preparado à mão com embalagem especial, laço e cartão personalizado. Enviamos de Ribeirão Preto para qualquer endereço no Brasil com Sedex rastreado.</p>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- Produto 1: Cesta Gourmet Dolce Vita -->
+                <div class="product-card fu d1">
+                    <div class="card-img-wrap">
+                        <img class="card-img" src="https://i.postimg.cc/fbTrDqSt/file-00000000662c71f88561683ccdb25c7d.png" alt="Cesta Gourmet Dolce Vita" id="img1thumb">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-badges">
+                            <span class="badge b-cherry"><i class="fa-solid fa-fire"></i> Mais Vendido</span>
+                            <span class="badge b-soft"><i class="fa-solid fa-truck-fast"></i> Frete Grátis</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category"><i class="fa-solid fa-wine-bottle"></i> Cesta Gourmet</div>
+                        <div>
+                            <h3 class="card-name">Cesta Gourmet Dolce Vita</h3>
+                            <p class="card-desc">Espumante brut premium, chocolates trufados artesanais, biscoitos amanteigados, queijo brie, geleia de frutas vermelhas e azeite aromatizado — tudo em cesta de vime com laço e cartão.</p>
+                        </div>
+                        <div class="card-features">
+                            <span class="card-feat"><i class="fa-solid fa-champagne-glasses"></i> Espumante brut</span>
+                            <span class="card-feat">🍫 Trufas artesanais</span>
+                            <span class="card-feat">🧀 Queijo brie</span>
+                            <span class="card-feat">🎀 Laço + cartão</span>
+                            <span class="card-feat">🧺 Cesta de vime</span>
+                        </div>
+                        <div>
+                            <div class="price-row">
+                                <span class="price-old">R$ 259,00</span>
+                                <div class="price-now">R$ 169,90</div>
+                            </div>
+                            <div class="price-detail">
+                                <span class="price-pix"><i class="fa-solid fa-circle-dollar" style="color:#32BCAD;font-size:9px;"></i> R$ 161,41 no PIX (5% OFF)</span>
+                                <span class="price-parcela">ou 3× de R$ 59,97 sem juros</span>
+                            </div>
+                            <span class="save-tag">Você economiza R$ 89,10</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart(1)">
+                            <i class="fa-solid fa-bag-shopping"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 2: Buquê 24 Rosas Luxo -->
+                <div class="product-card fu d2">
+                    <div class="card-img-wrap">
+                        <img class="card-img" src="https://i.postimg.cc/Jh42MYH0/file-000000005fb071fd9fdd14582e635966.png" alt="Buquê 24 Rosas Luxo" id="img2thumb">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-badges">
+                            <span class="badge b-amber"><i class="fa-solid fa-bolt"></i> Últimas Unidades</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category"><i class="fa-solid fa-seedling"></i> Floricultura Premium</div>
+                        <div>
+                            <h3 class="card-name">Buquê 24 Rosas Luxo</h3>
+                            <p class="card-desc">24 rosas vermelhas de corte premium com pétalas grandes e coloração intensa. Frescor garantido por até 10 dias, embaladas em papel kraft com laço e cartão personalizado manuscrito.</p>
+                        </div>
+                        <div class="card-features">
+                            <span class="card-feat">🌹 24 rosas premium</span>
+                            <span class="card-feat">⏱ Até 10 dias frescas</span>
+                            <span class="card-feat">🖊 Cartão manuscrito</span>
+                            <span class="card-feat">🎀 Papel kraft + laço</span>
+                        </div>
+                        <div>
+                            <div class="price-row">
+                                <span class="price-old">R$ 189,00</span>
+                                <div class="price-now">R$ 119,90</div>
+                            </div>
+                            <div class="price-detail">
+                                <span class="price-pix"><i class="fa-solid fa-circle-dollar" style="color:#32BCAD;font-size:9px;"></i> R$ 113,91 no PIX (5% OFF)</span>
+                                <span class="price-parcela">ou 2× de R$ 59,95 sem juros</span>
+                            </div>
+                            <span class="save-tag">Você economiza R$ 69,10</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart(2)">
+                            <i class="fa-solid fa-bag-shopping"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 3: Conjunto Colar & Brincos Eternal -->
+                <div class="product-card fu d3">
+                    <div class="card-img-wrap">
+                        <img class="card-img" src="https://i.postimg.cc/tgCMpvns/file-00000000393071fdb22401a6b35e482d.png" alt="Conjunto Colar & Brincos Eternal" id="img3thumb">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-badges">
+                            <span class="badge b-purple"><i class="fa-solid fa-gem"></i> Joalheria</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category"><i class="fa-solid fa-gem"></i> Joias & Acessórios</div>
+                        <div>
+                            <h3 class="card-name">Conjunto Colar & Brincos Eternal</h3>
+                            <p class="card-desc">Colar e brincos banhados a ouro 18k com cristais lapidados em formato de coração. Antialérgico, garantia de 1 ano. Apresentado em caixa de veludo com fita de cetim.</p>
+                        </div>
+                        <div class="card-features">
+                            <span class="card-feat">✨ Cristais lapidados</span>
+                            <span class="card-feat">🥇 Banho ouro 18k</span>
+                            <span class="card-feat">💙 Caixa veludo</span>
+                            <span class="card-feat">🛡 Antialérgico</span>
+                            <span class="card-feat">📜 Garantia 1 ano</span>
+                        </div>
+                        <div>
+                            <div class="price-row">
+                                <span class="price-old">R$ 299,00</span>
+                                <div class="price-now">R$ 189,90</div>
+                            </div>
+                            <div class="price-detail">
+                                <span class="price-pix"><i class="fa-solid fa-circle-dollar" style="color:#32BCAD;font-size:9px;"></i> R$ 180,41 no PIX (5% OFF)</span>
+                                <span class="price-parcela">ou 3× de R$ 66,97 sem juros</span>
+                            </div>
+                            <span class="save-tag">Você economiza R$ 109,10</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart(3)">
+                            <i class="fa-solid fa-bag-shopping"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 4: Kit Jantar à Dois In Casa -->
+                <div class="product-card fu d4">
+                    <div class="card-img-wrap">
+                        <img class="card-img" src="https://i.postimg.cc/Ls6b2Qgh/file-00000000b49c71fd8152b12d2b1b7d8b.png" alt="Kit Jantar à Dois In Casa" id="img4thumb">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-badges">
+                            <span class="badge b-cherry">40% OFF</span>
+                            <span class="badge b-green"><i class="fa-solid fa-fire"></i> Esgotando</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category"><i class="fa-solid fa-utensils"></i> Kit Jantar Romântico</div>
+                        <div>
+                            <h3 class="card-name">Kit Jantar à Dois In Casa</h3>
+                            <p class="card-desc">Tudo para montar o jantar perfeito: massa artesanal premium, molho especial com especiarias, vinho tinto reserva, azeite aromatizado, velas aromáticas e receita exclusiva para dois.</p>
+                        </div>
+                        <div class="card-features">
+                            <span class="card-feat">🍝 Massa artesanal</span>
+                            <span class="card-feat">🍷 Vinho reserva</span>
+                            <span class="card-feat">🫒 Azeite aromatizado</span>
+                            <span class="card-feat">🕯 Velas aromáticas</span>
+                            <span class="card-feat">📖 Receita exclusiva</span>
+                        </div>
+                        <div>
+                            <div class="price-row">
+                                <span class="price-old">R$ 279,00</span>
+                                <div class="price-now">R$ 164,90</div>
+                            </div>
+                            <div class="price-detail">
+                                <span class="price-pix"><i class="fa-solid fa-circle-dollar" style="color:#32BCAD;font-size:9px;"></i> R$ 156,66 no PIX (5% OFF)</span>
+                                <span class="price-parcela">ou 3× de R$ 57,97 sem juros</span>
+                            </div>
+                            <span class="save-tag">Você economiza R$ 114,10</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart(4)">
+                            <i class="fa-solid fa-bag-shopping"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="testi-section" id="depoimentos">
+        <div class="section-inner">
+            <div class="section-head fu">
+                <span class="sec-eyebrow">Avaliações Verificadas · Compradores Reais</span>
+                <h2 class="sec-title">Casais que <em>viveram</em> o momento</h2>
+                <div class="gold-rule"></div>
+                <p class="sec-sub">Mais de 4.200 pedidos entregues. Média de 4.9 estrelas com compradores verificados.</p>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card fu d1">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-text">"A cesta chegou lindamente embalada, você já sente a qualidade antes de abrir. O espumante, os chocolates trufados... minha namorada chorou de emoção. Atendimento pelo WhatsApp foi excelente, nota 10."</p>
+                    <div class="testi-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar" alt="Mateus">
+                        <div>
+                            <p class="author-name">Mateus S. — São Paulo, SP</p>
+                            <span class="author-badge"><i class="fa-solid fa-circle-check"></i> Comprador verificado · Cesta Gourmet</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card fu d2">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-text">"As rosas chegaram impecáveis, muito maiores e mais bonitas do que eu esperava. O cartão manuscrito foi um toque especial demais. Ela usou o colar no mesmo dia. Recomendo demais, vou comprar de novo."</p>
+                    <div class="testi-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="avatar" alt="Thiago">
+                        <div>
+                            <p class="author-name">Thiago M. — Ribeirão Preto, SP</p>
+                            <span class="author-badge"><i class="fa-solid fa-circle-check"></i> Comprador verificado · Rosas + Colar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card fu d3">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-text">"O kit jantar foi a noite mais especial que tivemos em anos. A massa artesanal, o vinho, as velas... ficou uma experiência completa. Embalagem impecável, chegou antes do prazo. Melhor presente que já dei."</p>
+                    <div class="testi-author">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" class="avatar" alt="Carlos">
+                        <div>
+                            <p class="author-name">Carlos E. — Campinas, SP</p>
+                            <span class="author-badge"><i class="fa-solid fa-circle-check"></i> Comprador verificado · Kit Jantar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="section-inner">
+            <div class="section-head fu">
+                <span class="sec-eyebrow">Dúvidas Frequentes</span>
+                <h2 class="sec-title">Respondemos suas <em>perguntas</em></h2>
+                <div class="gold-rule"></div>
+            </div>
+            <div class="faq-grid fu d1">
+                <div class="faq-item">
+                    <button class="faq-trigger">O valor ou a nota fiscal vão impressos no presente? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-content"><p>Não! Como sabemos que é um momento especial, nenhum presente acompanha o valor impresso ou nota fiscal física na caixa. A nota fiscal é enviada exclusivamente para o e-mail do comprador cadastrado no checkout.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">Como funciona a entrega agendada? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-content"><p>No momento do checkout, você pode escolher a data ideal para a entrega. Para a região de Ribeirão Preto e proximidades, conseguimos programar horários especiais. Para envios via Sedex nacional, o despacho é planejado para chegar o mais próximo possível da data escolhida.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">Posso enviar o presente de forma anônima? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-content"><p>Com certeza. Se você não preencher a mensagem do cartão ou solicitar ao nosso atendimento no WhatsApp que a entrega seja anônima, os dados do comprador serão mantidos sob total sigilo.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">E se a pessoa não estiver no local no momento da entrega? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-content"><p>Nosso sistema envia atualizações automáticas via WhatsApp para você acompanhar o rastreio em tempo real. No caso de entregas locais, nossa equipe entra em contato telefônico para tentar realocar ou entregar a um vizinho/portaria autorizada.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="security-section" id="seguranca">
+        <div class="section-inner">
+            <div class="section-head fu">
+                <span class="sec-eyebrow">Compra 100% Segura</span>
+                <h2 class="sec-title">Protegido do <em>clique</em> até a entrega</h2>
+                <div class="gold-rule"></div>
+            </div>
+            <div class="security-seals-1">
+                <div class="seal seal-green"><i class="fa-solid fa-lock"></i> SSL 256-bit</div>
+                <div class="seal seal-blue"><i class="fa-solid fa-shield-halved"></i> Site Blindado</div>
+                <div class="seal seal-blue"><i class="fa-brands fa-google"></i> Google Safe</div>
+                <div class="seal seal-green"><i class="fa-solid fa-credit-card"></i> PCI DSS Level 1</div>
+            </div>
+            <div class="security-seals-1" style="margin-top:10px;">
+                <div class="seal"><i class="fa-solid fa-circle-check" style="color:var(--green);"></i> Compra Garantida</div>
+                <div class="seal"><i class="fa-solid fa-truck-ramp-box" style="color:rgba(245,238,232,.6);"></i> Entrega Rastreada</div>
+                <div class="seal"><i class="fa-solid fa-building-columns" style="color:#60A8F0;"></i> Empresa Verificada</div>
+                <div class="seal"><i class="fa-solid fa-shield-heart" style="color:var(--cherry-l);"></i> Pagamento Seguro</div>
+            </div>
+            <div class="payments-row">
+                <div class="pay-chip" style="color:#32BCAD;border-color:rgba(50,188,173,.3);background:rgba(50,188,173,.08);">
+                    <i class="fa-solid fa-circle-dollar" style="color:#32BCAD;font-size:16px;"></i> PIX
+                </div>
+                <div class="pay-chip" style="color:#8A05BE;background:rgba(138,5,190,.1);border-color:rgba(138,5,190,.3);">
+                    <i class="fa-solid fa-building-columns"></i> Nubank
+                </div>
+                <div class="pay-chip" style="color:#FF7A00;background:rgba(255,122,0,.1);border-color:rgba(255,122,0,.3);">
+                    <i class="fa-solid fa-building-columns"></i> Inter
+                </div>
+                <div class="pay-chip" style="color:#EC7000;background:rgba(236,112,0,.1);border-color:rgba(236,112,0,.25);">
+                    <i class="fa-solid fa-building-columns"></i> Itaú
+                </div>
+                <div class="pay-chip" style="color:#CC092F;background:rgba(204,9,47,.1);border-color:rgba(204,9,47,.25);">
+                    <i class="fa-solid fa-building-columns"></i> Bradesco
+                </div>
+                <div class="pay-chip" style="color:#EC0000;background:rgba(236,0,0,.08);border-color:rgba(236,0,0,.2);">
+                    <i class="fa-solid fa-building-columns"></i> Santander
+                </div>
+                <div class="pay-chip" style="color:#00B514;background:rgba(0,181,20,.08);border-color:rgba(0,181,20,.22);">
+                    <i class="fa-solid fa-building-columns"></i> Banco do Brasil
+                </div>
+                <div class="pay-chip" style="color:#0072CE;background:rgba(0,114,206,.08);border-color:rgba(0,114,206,.2);">
+                    <i class="fa-solid fa-building-columns"></i> Caixa
+                </div>
+            </div>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-lock"></i></div>
+                    <div><p class="trust-title">Criptografia SSL Ativa</p><p class="trust-desc">Todos os seus dados são criptografados com o mesmo padrão dos maiores bancos do mundo.</p></div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <div><p class="trust-title">Sedex Rastreado</p><p class="trust-desc">Código de rastreio enviado via WhatsApp minutos após a separação do pedido.</p></div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div><p class="trust-title">Garantia de 7 dias</p><p class="trust-desc">Não ficou satisfeito? Devolvemos 100% do valor sem burocracia dentro do prazo legal.</p></div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-brands fa-whatsapp" style="color:#25D366;font-size:18px;"></i></div>
+                    <div><p class="trust-title">Suporte 24h via WhatsApp</p><p class="trust-desc">Time de atendimento pronto para responder a qualquer momento, inclusive fins de semana.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <p class="footer-logo">HOME LOVE CO.</p>
+                    <p class="footer-brand-desc">Especialistas em presentes premium com entrega garantida em todo o Brasil. Cada pedido é preparado à mão com embalagem cuidadosa, direto do nosso ateliê em Ribeirão Preto — SP.</p>
+                </div>
+                <div class="footer-links">
+                    <a onclick="openFooterModal('privacy')">Política de Privacidade</a>
+                    <a onclick="openFooterModal('returns')">Trocas & Devoluções</a>
+                    <a onclick="openFooterModal('tracking')">Rastrear Pedido</a>
+                    <a href="https://wa.me/5518981889090" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 Home Love Presentes Premium · CNPJ 43.190.490/0001-82</p>
+                <p class="footer-copy">Rua Barão do Amazonas, 685 - Centro, Ribeirão Preto - SP, CEP 14015-110</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Modals -->
+    <div id="footerModalPrivacy" class="footer-modal" onclick="closeFooterModal('privacy')">
+        <div class="footer-modal-content" onclick="event.stopPropagation()">
+            <h3>Política de Privacidade</h3>
+            <p>Nós da Home Love tratamos a sua privacidade com a máxima seriedade. Todos os dados informados no checkout são utilizados exclusivamente para processamento e entrega do seu pedido.</p>
+            <ul>
+                <li>Seus dados jamais serão compartilhados com terceiros.</li>
+                <li>Utilizamos criptografia SSL de 256 bits em todas as transações.</li>
+                <li>As informações de pagamento não são armazenadas em nossos servidores.</li>
+                <li>Você pode solicitar a exclusão dos seus dados a qualquer momento pelo WhatsApp.</li>
+            </ul>
+            <button class="close-modal" onclick="closeFooterModal('privacy')">Entendi</button>
+        </div>
+    </div>
+    <div id="footerModalReturns" class="footer-modal" onclick="closeFooterModal('returns')">
+        <div class="footer-modal-content" onclick="event.stopPropagation()">
+            <h3>Trocas & Devoluções</h3>
+            <p>Garantia de 7 dias após o recebimento. Se por qualquer motivo você não ficar satisfeito com o presente, devolvemos 100% do valor.</p>
+            <ul>
+                <li>O produto deve estar em condições originais, sem uso.</li>
+                <li>Entre em contato pelo WhatsApp para iniciar o processo.</li>
+                <li>O reembolso é feito via PIX em até 24h após o recebimento.</li>
+                <li>Em caso de defeito, o frete de devolução é por nossa conta.</li>
+            </ul>
+            <button class="close-modal" onclick="closeFooterModal('returns')">Entendi</button>
+        </div>
+    </div>
+    <div id="footerModalTracking" class="footer-modal" onclick="closeFooterModal('tracking')">
+        <div class="footer-modal-content" onclick="event.stopPropagation()">
+            <h3>Rastrear Pedido</h3>
+            <p>Assim que seu pedido for despachado, você receberá automaticamente o código de rastreio dos Correios via WhatsApp no número cadastrado.</p>
+            <p style="margin-top: 12px;">O rastreamento também fica disponível 24h no site dos Correios com o código enviado. Caso não tenha recebido, entre em contato pelo WhatsApp abaixo:</p>
+            <a href="https://wa.me/5518981889090" target="_blank" class="close-modal" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;"><i class="fa-brands fa-whatsapp"></i> Falar com Suporte</a>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cartOverlay" onclick="closeCart()"></div>
+    <div id="cartSidebar">
+        <div class="cart-header">
+            <p class="cart-title"><i class="fa-solid fa-bag-shopping"></i> Minha Sacola</p>
+            <button class="icon-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cartItemsList">
+            <div class="cart-empty" id="cartEmpty" style="display:flex;">
+                <i class="fa-solid fa-gift"></i>
+                <p>Sua sacola está vazia.</p>
+                <a onclick="closeCart();document.getElementById('colecao').scrollIntoView({behavior:'smooth'});">Ver presentes →</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <div class="ct-row"><span>Subtotal</span><span id="cartSubtotal">R$ 0,00</span></div>
+                <div class="ct-row free"><span><i class="fa-solid fa-truck-fast"></i> Frete Sedex</span><span>GRÁTIS</span></div>
+                <div class="ct-divider"></div>
+                <div class="ct-row big"><span>Total</span><span class="amount" id="cartTotal">R$ 0,00</span></div>
+            </div>
+            <button class="btn-primary btn-green" style="width:100%;" onclick="openCheckoutModal()">
+                <i class="fa-solid fa-lock"></i> Finalizar Pedido
+            </button>
+            <div style="display:flex;justify-content:center;gap:14px;margin-top:9px;font-size:9px;color:var(--muted);">
+                <span><i class="fa-solid fa-lock" style="color:var(--green);"></i> SSL</span>
+                <span><i class="fa-solid fa-shield-halved" style="color:#60A8F0;"></i> PCI DSS</span>
+                <span><i class="fa-solid fa-rotate-left" style="color:rgba(245,238,232,.5);"></i> 7 dias</span>
+                <span><i class="fa-solid fa-circle-dollar" style="color:#32BCAD;"></i> PIX</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" onclick="handleModalBgClick(event)">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <p class="modal-title"><i class="fa-solid fa-lock"></i> Finalizar Pedido</p>
+                    <p class="modal-subtitle">Ambiente seguro · SSL 256-bit · PCI DSS</p>
+                </div>
+                <button class="icon-btn" onclick="closeCheckoutModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-seals">
+                    <span class="cs g"><i class="fa-solid fa-lock"></i> SSL 256-bit</span>
+                    <span class="cs-divider"></span>
+                    <span class="cs b"><i class="fa-solid fa-shield-halved"></i> Site Blindado</span>
+                    <span class="cs-divider"></span>
+                    <span class="cs g"><i class="fa-solid fa-credit-card"></i> PCI DSS</span>
+                    <span class="cs-divider"></span>
+                    <span class="cs b"><i class="fa-brands fa-google"></i> Safe Browsing</span>
+                    <span class="cs-divider"></span>
+                    <span class="cs y"><i class="fa-solid fa-circle-check"></i> Compra Garantida</span>
+                </div>
+
+                <div class="order-summary-mini" id="orderSummaryMini">
+                    <p class="osm-title">Resumo do Pedido</p>
+                    <div id="osm-items"></div>
+                    <div class="osm-item total"><span>Total</span><span id="osm-total">R$ 0,00</span></div>
+                    <div style="font-size:10px;color:var(--green);margin-top:5px;display:flex;align-items:center;gap:4px;">
+                        <i class="fa-solid fa-truck-fast"></i> Frete Sedex Grátis incluído
+                    </div>
+                </div>
+
+                <div class="field-group two">
+                    <div>
+                        <label class="field-label">Seu Nome Completo</label>
+                        <div class="field-wrap">
+                            <i class="fa-solid fa-user field-icon"></i>
+                            <input type="text" id="custName" class="field-input" placeholder="João Silva" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="field-label">Seu WhatsApp</label>
+                        <div class="field-wrap">
+                            <i class="fa-solid fa-phone field-icon"></i>
+                            <input type="tel" id="custPhone" class="field-input" placeholder="(18) 99818-9090" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group two">
+                    <div>
+                        <label class="field-label">E-mail (para Nota Fiscal)</label>
+                        <div class="field-wrap">
+                            <i class="fa-solid fa-envelope field-icon"></i>
+                            <input type="email" id="custEmail" class="field-input" placeholder="seuemail@email.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="field-label">Data de Entrega Desejada</label>
+                        <div class="field-wrap">
+                            <i class="fa-solid fa-calendar-days field-icon"></i>
+                            <input type="date" id="deliveryDate" class="field-input" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-checkbox-wrap">
+                    <input type="checkbox" id="isGift" onchange="toggleGiftFields()">
+                    <label for="isGift"><i class="fa-solid fa-gift" style="margin-right: 4px;"></i> Este pedido é um presente para outra pessoa</label>
+                </div>
+
+                <div class="collapsible-field" id="giftFields">
+                    <div>
+                        <label class="field-label">Nome de quem vai receber (Destinatário)</label>
+                        <div class="field-wrap">
+                            <i class="fa-solid fa-user-heart field-icon"></i>
+                            <input type="text" id="recipientName" class="field-input" placeholder="Nome da pessoa amada">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div>
+                        <label class="field-label">Endereço de Entrega Completo</label>
+                        <div class="field-wrap">
+                            <i class="fa-solid fa-location-dot field-icon"></i>
+                            <input type="text" id="custAddress" class="field-input" placeholder="Rua, número, bairro, cidade — CEP" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div>
+                        <label class="field-label">Mensagem para o Cartão (opcional)</label>
+                        <div class="field-wrap">
+                            <i class="fa-solid fa-heart field-icon" style="top:14px;transform:none;"></i>
+                            <textarea id="custMsg" class="field-input" placeholder="Escreva uma mensagem especial para o cartão impresso..." style="padding-top:10px;padding-bottom:10px;min-height:60px;resize:none;line-height:1.5;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="field-label">Forma de Pagamento</label>
+                    <div class="pay-opts">
+                        <div>
+                            <input type="radio" name="pay" value="PIX" id="payPix" class="pay-radio" checked>
+                            <label for="payPix" class="pay-lbl">
+                                <i class="fa-solid fa-circle-dollar" style="color:#32BCAD;"></i> PIX — Aprovação imediata + 5% de desconto
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pay" value="Cartão" id="payCard" class="pay-radio" disabled>
+                            <label for="payCard" class="pay-lbl disabled">
+                                <i class="fa-solid fa-credit-card" style="color:var(--muted);"></i> Cartão de crédito — Em breve
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p style="font-size:9px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Bancos com PIX compatíveis</p>
+                    <div class="co-pay-logos">
+                        <span class="co-pay-logo" style="color:#8A05BE;"><i class="fa-solid fa-building-columns"></i> Nubank</span>
+                        <span class="co-pay-logo" style="color:#FF7A00;"><i class="fa-solid fa-building-columns"></i> Inter</span>
+                        <span class="co-pay-logo" style="color:#EC7000;"><i class="fa-solid fa-building-columns"></i> Itaú</span>
+                        <span class="co-pay-logo" style="color:#CC092F;"><i class="fa-solid fa-building-columns"></i> Bradesco</span>
+                        <span class="co-pay-logo" style="color:#EC0000;"><i class="fa-solid fa-building-columns"></i> Santander</span>
+                        <span class="co-pay-logo" style="color:#00B514;"><i class="fa-solid fa-building-columns"></i> BB</span>
+                        <span class="co-pay-logo" style="color:#0072CE;"><i class="fa-solid fa-building-columns"></i> Caixa</span>
+                    </div>
+                </div>
+
+                <div class="info-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>Ao confirmar, o WhatsApp abrirá em uma nova aba com nossa equipe para concluir o pagamento via PIX com segurança. Aceitamos somente PIX para garantir agilidade e proteção máxima.</p>
+                </div>
+
+                <button class="btn-primary btn-green" style="width:100%;font-size:13px;padding:15px;" onclick="handleCheckoutSubmit()">
+                    <i class="fa-solid fa-circle-check"></i> Confirmar e Pagar via PIX
+                </button>
+
+                <div style="text-align:center;">
+                    <p style="font-size:9px;color:rgba(144,136,160,.5);line-height:1.6;">
+                        <i class="fa-solid fa-lock" style="color:var(--green);"></i> Dados protegidos por SSL 256-bit ·
+                        Não armazenamos informações bancárias
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const WHATSAPP_NUMBER = "5518981889090";
+
+        const products = {
+            1: { name: "Cesta Gourmet Dolce Vita", price: 169.90, imgId: "img1thumb" },
+            2: { name: "Buquê 24 Rosas Luxo", price: 119.90, imgId: "img2thumb" },
+            3: { name: "Conjunto Colar & Brincos Eternal", price: 189.90, imgId: "img3thumb" },
+            4: { name: "Kit Jantar à Dois In Casa", price: 164.90, imgId: "img4thumb" }
+        };
+        let cart = {};
+
+        /* ── COUNTDOWN ── */
+        function initCountdown() {
+            const END = new Date(2026, 5, 12, 12, 0, 0);
+
+            function tick() {
+                let diff = Math.max(0, END - new Date());
+                const d = Math.floor(diff / 86400000);
+                diff -= d * 86400000;
+                const h = Math.floor(diff / 3600000);
+                diff -= h * 3600000;
+                const m = Math.floor(diff / 60000);
+                diff -= m * 60000;
+                const s = Math.floor(diff / 1000);
+                document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+                document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+                document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+                document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+                if (!d && !h && !m && !s) {
+                    document.querySelector('.countdown-label').textContent = '⏰ Promoção encerrada';
+                }
+            }
+            tick();
+            setInterval(tick, 1000);
+        }
+
+        /* ── CART ── */
+        function openCart() {
+            document.getElementById('cartSidebar').classList.add('open');
+            document.getElementById('cartOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cartSidebar').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function addToCart(id) {
+            cart[id] = cart[id] ? { ...cart[id], qty: cart[id].qty + 1 } : { ...products[id], qty: 1 };
+            updateCartUI();
+            openCart();
+        }
+
+        function updateQty(id, delta) {
+            if (!cart[id]) return;
+            cart[id].qty += delta;
+            if (cart[id].qty <= 0) delete cart[id];
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const list = document.getElementById('cartItemsList');
+            const empty = document.getElementById('cartEmpty');
+            const count = document.getElementById('cartCount');
+            const sub = document.getElementById('cartSubtotal');
+            const tot = document.getElementById('cartTotal');
+            const keys = Object.keys(cart);
+            let totalItems = 0,
+                totalPrice = 0;
+            list.querySelectorAll('.cart-item').forEach(n => n.remove());
+            if (!keys.length) {
+                empty.style.display = 'flex';
+                count.textContent = '0';
+                sub.textContent = 'R$ 0,00';
+                tot.textContent = 'R$ 0,00';
+                return;
+            }
+            empty.style.display = 'none';
+            const frag = document.createDocumentFragment();
+            keys.forEach(id => {
+                const item = cart[id];
+                totalItems += item.qty;
+                totalPrice += item.price * item.qty;
+                const imgEl = document.getElementById(item.imgId);
+                const thumb = imgEl ? imgEl.src : '';
+                const row = document.createElement('div');
+                row.className = 'cart-item';
+                row.innerHTML = `
+                    <img src="${thumb}" class="cart-item-img" alt="${item.name}" style="${thumb?'':'background:var(--ink3);'}">
+                    <div style="flex:1;min-width:0;">
+                        <p class="cart-item-name">${item.name}</p>
+                        <p class="cart-item-price">R$ ${(item.price*item.qty).toFixed(2).replace('.',',')}</p>
+                        <div class="qty-row">
+                            <button class="qty-btn" onclick="updateQty(${id},-1)">−</button>
+                            <span class="qty-num">${item.qty}</span>
+                            <button class="qty-btn" onclick="updateQty(${id},1)">+</button>
+                        </div>
+                    </div>`;
+                frag.appendChild(row);
+            });
+            list.appendChild(frag);
+            count.textContent = totalItems;
+            sub.textContent = `R$ ${totalPrice.toFixed(2).replace('.',',')}`;
+            tot.textContent = `R$ ${totalPrice.toFixed(2).replace('.',',')}`;
+        }
+
+        /* ── CHECKOUT ── */
+        function toggleGiftFields() {
+            const checkbox = document.getElementById('isGift');
+            const container = document.getElementById('giftFields');
+            const recipientInput = document.getElementById('recipientName');
+            if (checkbox.checked) {
+                container.classList.add('open');
+                setTimeout(() => {
+                    recipientInput.focus();
+                }, 400);
+            } else {
+                container.classList.remove('open');
+                recipientInput.value = '';
+                recipientInput.classList.remove('error');
+            }
+        }
+
+        function openCheckoutModal() {
+            if (!Object.keys(cart).length) {
+                const finalizarBtn = document.querySelector('.cart-footer .btn-green');
+                if (finalizarBtn) {
+                    finalizarBtn.style.transform = 'scale(0.95)';
+                    setTimeout(() => { finalizarBtn.style.transform = ''; }, 150);
+                }
+                return;
+            }
+            const osm = document.getElementById('osm-items');
+            const osmTot = document.getElementById('osm-total');
+            let total = 0,
+                html = '';
+            Object.keys(cart).forEach(id => {
+                const item = cart[id];
+                total += item.price * item.qty;
+                html +=
+                    `<div class="osm-item"><span>${item.qty}× ${item.name}</span><span>R$ ${(item.price*item.qty).toFixed(2).replace('.',',')}</span></div>`;
+            });
+            osm.innerHTML = html;
+            osmTot.textContent = `R$ ${total.toFixed(2).replace('.',',')}`;
+            closeCart();
+            document.getElementById('checkoutModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('payPix').checked = true;
+            // Reseta o estado do checkbox e campo de destinatário ao abrir
+            document.getElementById('isGift').checked = false;
+            document.getElementById('giftFields').classList.remove('open');
+            document.getElementById('recipientName').value = '';
+            document.getElementById('recipientName').classList.remove('error');
+            // Remove erros visuais anteriores
+            document.querySelectorAll('.field-input.error').forEach(el => el.classList.remove('error'));
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function handleModalBgClick(e) {
+            if (e.target === document.getElementById('checkoutModal')) closeCheckoutModal();
+        }
+
+        /* Validação silenciosa: destaca campos inválidos e retorna false se houver erro */
+        function validateCheckoutFields() {
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const email = document.getElementById('custEmail').value.trim();
+            const deliveryDate = document.getElementById('deliveryDate').value;
+            const isGift = document.getElementById('isGift').checked;
+            const recipientName = document.getElementById('recipientName').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+
+            // Limpa erros anteriores
+            document.querySelectorAll('.field-input.error').forEach(el => el.classList.remove('error'));
+
+            let valid = true;
+
+            if (name.length < 4) {
+                document.getElementById('custName').classList.add('error');
+                valid = false;
+            }
+            if (phone.length < 10) {
+                document.getElementById('custPhone').classList.add('error');
+                valid = false;
+            }
+            if (email.length < 5 || !email.includes('@')) {
+                document.getElementById('custEmail').classList.add('error');
+                valid = false;
+            }
+            if (!deliveryDate) {
+                document.getElementById('deliveryDate').classList.add('error');
+                valid = false;
+            }
+            if (isGift && recipientName.length < 3) {
+                document.getElementById('recipientName').classList.add('error');
+                valid = false;
+            }
+            if (address.length < 12) {
+                document.getElementById('custAddress').classList.add('error');
+                valid = false;
+            }
+            return valid;
+        }
+
+        function handleCheckoutSubmit() {
+            if (!validateCheckoutFields()) {
+                // Remove o destaque automaticamente após 2 segundos
+                setTimeout(() => {
+                    document.querySelectorAll('.field-input.error').forEach(el => el.classList.remove('error'));
+                }, 2000);
+                return;
+            }
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const email = document.getElementById('custEmail').value.trim();
+            const deliveryDate = document.getElementById('deliveryDate').value;
+            const isGift = document.getElementById('isGift').checked;
+            const recipientName = document.getElementById('recipientName').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const msg = document.getElementById('custMsg').value.trim();
+
+            let total = 0,
+                items = '';
+            Object.keys(cart).forEach(id => {
+                const item = cart[id];
+                total += item.price * item.qty;
+                items +=
+                    `• ${item.qty}× ${item.name} — R$ ${(item.price*item.qty).toFixed(2).replace('.', ',')}\n`;
+            });
+            const pixTotal = (total * 0.95).toFixed(2).replace('.', ',');
+            const dataFormatada = deliveryDate.split('-').reverse().join('/');
+
+            const text =
+                `🎁 *NOVO PEDIDO — HOME LOVE* 🎁\n\n` +
+                `👤 *Comprador:* ${name}\n` +
+                `📱 *WhatsApp:* ${phone}\n` +
+                `📧 *E-mail:* ${email}\n\n` +
+                `📅 *Data de Entrega Desejada:* ${dataFormatada}\n` +
+                (isGift ?
+                    `💝 *Tipo:* PRESENTE (Ocultar Preço na Caixa)\n🎯 *Destinatário:* ${recipientName}\n` :
+                    `💝 *Tipo:* Entrega Pessoal\n`) +
+                `📍 *Endereço de Entrega:* ${address}\n\n` +
+                `📦 *Itens do Pedido:*\n${items}\n` +
+                (msg ? `💌 *Mensagem Customizada do Cartão:* "${msg}"\n\n` : '') +
+                `🚚 Frete Sedex: *GRÁTIS*\n` +
+                `💳 Opção de Pagamento: *PIX*\n` +
+                `💰 *Total com Desconto PIX (5%): R$ ${pixTotal}*\n\n` +
+                `Olá, acabei de gerar meu pedido na loja! Aguardo o envio da chave PIX para concluir o pagamento. 😊`;
+
+            const url =
+                `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(text)}`;
+            const newWindow = window.open(url, '_blank');
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                window.location.href = url;
+            }
+        }
+
+        /* ── FOOTER MODALS ── */
+        function openFooterModal(type) {
+            const modalMap = {
+                'privacy': 'footerModalPrivacy',
+                'returns': 'footerModalReturns',
+                'tracking': 'footerModalTracking'
+            };
+            const modalId = modalMap[type];
+            if (modalId) {
+                document.getElementById(modalId).classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeFooterModal(type) {
+            const modalMap = {
+                'privacy': 'footerModalPrivacy',
+                'returns': 'footerModalReturns',
+                'tracking': 'footerModalTracking'
+            };
+            const modalId = modalMap[type];
+            if (modalId) {
+                document.getElementById(modalId).classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        /* ── FAQ ── */
+        function initFaq() {
+            document.querySelectorAll('.faq-trigger').forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    const content = this.nextElementSibling;
+                    const isActive = parent.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-content').style.maxHeight = null;
+                    });
+                    if (!isActive) {
+                        parent.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+        }
+
+        /* ── AMBIENT CANVAS ── */
+        function initAmbient() {
+            const canvas = document.getElementById('ambientCanvas');
+            const ctx = canvas.getContext('2d');
+            let W = canvas.width = innerWidth,
+                H = canvas.height = innerHeight;
+            window.addEventListener('resize', () => { W = canvas.width = innerWidth;
+                H = canvas.height = innerHeight; });
+            const pts = Array.from({ length: 14 }, () => ({
+                x: Math.random() * innerWidth,
+                y: Math.random() * innerHeight,
+                r: Math.random() * 2.5 + 1.2,
+                vy: Math.random() * .5 + .2,
+                vx: (Math.random() - .5) * .25,
+                op: Math.random() * .18 + .03,
+                phase: Math.random() * Math.PI * 2
+            }));
+            let t = 0;
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                t += .01;
+                pts.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle =
+                        `rgba(196,26,72,${p.op*(.7+.3*Math.sin(t+p.phase))})`;
+                    ctx.fill();
+                    p.y += p.vy;
+                    p.x += p.vx + Math.sin(t + p.phase) * .2;
+                    if (p.y > H + 8) { p.y = -8;
+                        p.x = Math.random() * W; }
+                });
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        /* ── INIT ── */
+        document.addEventListener('DOMContentLoaded', () => {
+            initCountdown();
+            initAmbient();
+            initFaq();
+            updateCartUI();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeCheckoutModal();
+                closeCart();
+                document.querySelectorAll('.footer-modal.open').forEach(m => {
+                    m.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
