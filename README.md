@@ -1517,6 +1517,13 @@
             line-height: 1.6;
         }
 
+        /* ── Validação silenciosa ── */
+        .field-input.error {
+            border-color: #E8345A !important;
+            box-shadow: 0 0 0 1px #E8345A;
+            transition: border-color .25s, box-shadow .25s;
+        }
+
         #ambientCanvas {
             position: fixed;
             inset: 0;
@@ -2329,8 +2336,15 @@
         }
 
         function openCheckoutModal() {
-            if (!Object.keys(cart).length) { alert('Adicione pelo menos um presente.');
-                return; }
+            if (!Object.keys(cart).length) {
+                // destaque sutil no botão do carrinho sem alerta
+                const finalizarBtn = document.querySelector('.cart-footer .btn-green');
+                if (finalizarBtn) {
+                    finalizarBtn.style.transform = 'scale(0.95)';
+                    setTimeout(() => { finalizarBtn.style.transform = ''; }, 150);
+                }
+                return;
+            }
             const osm = document.getElementById('osm-items');
             const osmTot = document.getElementById('osm-total');
             let total = 0,
@@ -2358,7 +2372,57 @@
             if (e.target === document.getElementById('checkoutModal')) closeCheckoutModal();
         }
 
+        /* Validação silenciosa: destaca campos inválidos e retorna false se houver erro */
+        function validateCheckoutFields() {
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const email = document.getElementById('custEmail').value.trim();
+            const deliveryDate = document.getElementById('deliveryDate').value;
+            const isGift = document.getElementById('isGift').checked;
+            const recipientName = document.getElementById('recipientName').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+
+            // Limpa erros anteriores
+            document.querySelectorAll('.field-input.error').forEach(el => el.classList.remove('error'));
+
+            let valid = true;
+
+            if (name.length < 4) {
+                document.getElementById('custName').classList.add('error');
+                valid = false;
+            }
+            if (phone.length < 10) {
+                document.getElementById('custPhone').classList.add('error');
+                valid = false;
+            }
+            if (email.length < 5 || !email.includes('@')) {
+                document.getElementById('custEmail').classList.add('error');
+                valid = false;
+            }
+            if (!deliveryDate) {
+                document.getElementById('deliveryDate').classList.add('error');
+                valid = false;
+            }
+            if (isGift && recipientName.length < 3) {
+                document.getElementById('recipientName').classList.add('error');
+                valid = false;
+            }
+            if (address.length < 12) {
+                document.getElementById('custAddress').classList.add('error');
+                valid = false;
+            }
+            return valid;
+        }
+
         function handleCheckoutSubmit() {
+            if (!validateCheckoutFields()) {
+                // Remove o destaque automaticamente após 2 segundos
+                setTimeout(() => {
+                    document.querySelectorAll('.field-input.error').forEach(el => el.classList.remove('error'));
+                }, 2000);
+                return;
+            }
+
             const name = document.getElementById('custName').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
             const email = document.getElementById('custEmail').value.trim();
@@ -2367,22 +2431,6 @@
             const recipientName = document.getElementById('recipientName').value.trim();
             const address = document.getElementById('custAddress').value.trim();
             const msg = document.getElementById('custMsg').value.trim();
-
-            if (name.length < 4) { alert('Por favor, digite o nome completo do comprador.');
-                return; }
-            if (phone.length < 10) { alert('Por favor, insira um número de WhatsApp válido.');
-                return; }
-            if (email.length < 5 || !email.includes('@')) { alert(
-                    'Por favor, insira um e-mail válido para receber sua nota fiscal.');
-                return; }
-            if (!deliveryDate) { alert('Por favor, selecione uma data desejada para a entrega.');
-                return; }
-            if (isGift && recipientName.length < 3) { alert(
-                    'Por favor, indique o nome do destinatário do presente.');
-                return; }
-            if (address.length < 12) { alert(
-                    'Por favor, detalhe melhor o seu endereço completo (Rua, Número, Bairro, Cidade e CEP).');
-                return; }
 
             let total = 0,
                 items = '';
